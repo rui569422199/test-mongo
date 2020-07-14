@@ -5,13 +5,18 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import com.alibaba.fastjson.JSONObject;
 
 import personal.wrui.test.test_mongo.pojo.TestDao;
 import personal.wrui.test.test_mongo.service.ITestService;
 
-
+/**
+ * used test-resource application.properties
+ * @author wrui
+ *
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class AppTest {
@@ -19,25 +24,15 @@ public class AppTest {
 	@Autowired@Lazy
 	private ITestService testService;
 	
-	@Autowired@Lazy
-	private MongoTemplate mongoTemplate;
-
 	@Test
-	public void insert() {
-		try {
-			TestDao test=new TestDao();
-			test.setId("wrui111");
-			mongoTemplate.insert(test);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void testInsert() {
+		TestDao test=new TestDao();
+		test.setId("wrui1113");
+		testService.insert(test);
 	}
 	
 	@Test
-	public void test() {
-		TestDao test=new TestDao();
-		test.setId("wrui1112");
-		testService.insert(test);
+	public void testFind() {
+		testService.findById("wrui1113");
 	}
 }
