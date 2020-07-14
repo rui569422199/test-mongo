@@ -45,8 +45,8 @@ public class TestServiceImpl implements ITestService {
 		obj.append("_id", id);
 		DBCollectionFindOptions options=new DBCollectionFindOptions();
 		options.readPreference(ReadPreference.secondaryPreferred());
-//		List<DBObject> result = mongoTemplate.getCollection("tb_test_wrui").find(obj, options).toArray();
-//		System.out.println(com.alibaba.fastjson.JSONObject.toJSONString(result));
+		List<DBObject> result = mongoTemplate.getCollection("tb_test_wrui").find(obj, options).toArray();
+		System.out.println(com.alibaba.fastjson.JSONObject.toJSONString(result));
 	}
 
 }
