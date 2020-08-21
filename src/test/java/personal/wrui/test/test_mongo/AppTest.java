@@ -1,5 +1,8 @@
 package personal.wrui.test.test_mongo;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +37,19 @@ public class AppTest {
 	@Test
 	public void testFind() {
 		testService.findById("wrui1113");
+	}
+	
+	
+	public static void main(String[] args) {
+		Calendar cl=Calendar.getInstance();
+		cl.set(Calendar.YEAR, 2020);
+		cl.set(Calendar.DAY_OF_MONTH, 22);
+		cl.set(Calendar.MONTH, Calendar.JULY);
+		cl.add(Calendar.YEAR, 1);
+		System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(cl.getTime()));
+		cl.add(Calendar.YEAR, 1);
+		System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(cl.getTime()));
+		cl.add(Calendar.YEAR, 1);
+		System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(cl.getTime()));
 	}
 }
