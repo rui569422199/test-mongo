@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.alibaba.fastjson.JSONObject;
 
 import personal.wrui.test.test_mongo.pojo.TestDao;
 import personal.wrui.test.test_mongo.service.ITestService;

@@ -28,9 +28,5 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
 		</dependency>
-		<dependency>
-			 <groupId>com.alibaba</groupId>
-			 <artifactId>fastjson</artifactId>
-		</dependency>
 	</dependencies>
 </project>
